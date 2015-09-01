@@ -8,17 +8,9 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
-    <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
   </head>
@@ -29,14 +21,14 @@
         <h1 class="title">8Ball - Ask me any question</h1>
       </ion-header-bar>
       <ion-content class="dark-bg" ng-controller="eightball">
+        <div class="question"> <input type="text" ng-model="user.text">
+              <button ng-click="showAnswer()" class="btn btn-primary">Show 8ball's answer</button>
+        </div>
        <div class="crystallBallOuter">
         <div class="crystalBallPlaceholder" >
-         <img class="responsive" ng-src="img/8ball.png" ng-click="showAnswer()">
+         <img class="responsive" ng-src="img/8ball.png">
         </div>
-        <div class="crystalBallPlaceholder"
-             ng-class="{notVisible:!showAnswerVar, visible:showAnswerVar}" >
-         <img class="responsive" ng-src="img/8ball.png" ng-click="showAnswer()">
-        </div>
+
        </div>
        <div class="answerOuter">
         <div class="answerInner">
